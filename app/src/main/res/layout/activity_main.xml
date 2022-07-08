@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/maxTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="35dp"
+        android:textColor="#ffffffff"
+        android:text="26°"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/minTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:textColor="#ffffffff"
+        android:text="21°"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/maxTemperature"
+        app:layout_constraintTop_toTopOf="@+id/maxTemperature" />
+
+    <com.lazyiones.weather.IndexHorizontalScrollView
+        android:id="@+id/index_horizontal_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/maxTemperature"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.lazyiones.weather.TwentyFourHourView
+            android:id="@+id/twenty_four_hour_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.lazyiones.weather.IndexHorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
